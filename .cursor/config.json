@@ -1,0 +1,6 @@
+{
+  "naming": "camelCase",
+  "testing": "Jest",
+  "architecture": "modular",
+  "goals": ["Maintain context awareness across features.", "Follow MVP-first development."]
+}

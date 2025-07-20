@@ -1,0 +1,129 @@
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --border-color: #eee;
+  --secondary-text-color: #888;
+  --notes-text-color: #555;
+}
+
+.dark {
+  --background-color: #222;
+  --text-color: #fff;
+  --border-color: #444;
+  --secondary-text-color: #aaa;
+  --notes-text-color: #ccc;
+}
+
+body {
+  width: 300px;
+  height: 400px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.tab-card {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid var(--border-color);
+  justify-content: space-between;
+}
+
+.tab-details {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.tab-card .favicon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.tab-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 8px;
+  overflow: hidden;
+}
+
+.tab-title {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-url {
+  font-size: 12px;
+  color: var(--secondary-text-color);
+}
+
+.archived-tabs {
+  margin-top: 16px;
+}
+
+.archived-tab-card {
+  padding: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-notes {
+  font-size: 12px;
+  color: var(--notes-text-color);
+  margin-top: 4px;
+}
+
+.archive-button {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.restore-button {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  z-index: 10;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
