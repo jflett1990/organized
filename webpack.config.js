@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: {
     popup: './src/popup/popup.js',
     background: './src/background/index.js',
@@ -11,6 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+    clean: true,
   },
   module: {
     rules: [
@@ -40,4 +42,5 @@ module.exports = {
       ],
     }),
   ],
+  devtool: process.env.NODE_ENV === 'production' ? false : 'source-map',
 }; 

@@ -95,24 +95,79 @@ const App = () => {
 
   return (
     <div className={`app-container ${theme}`}>
-      {loading && <div className="loading-overlay">Archiving...</div>}
+      {loading && (
+        <div className="loading-overlay">
+          <div className="loading-spinner"></div>
+          <div>Archiving tab...</div>
+        </div>
+      )}
+      
       <div className="header">
         <h1>TabSense</h1>
-        <button onClick={toggleTheme}>
-          {theme === 'light' ? 'Dark' : 'Light'} Mode
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {theme === 'light' ? '🌙' : '☀️'} {theme === 'light' ? 'Dark' : 'Light'}
         </button>
       </div>
-      <TabGroup tabs={tabs} onArchive={handleArchiveTab} />
 
-      <hr />
+      <div className="main-content">
+        {/* Stats Bar */}
+        <div className="stats-bar">
+          <div className="stat-item">
+            <span>Open:</span>
+            <span className="stat-number">{tabs.length}</span>
+          </div>
+          <div className="stat-item">
+            <span>Archived:</span>
+            <span className="stat-number">{archivedTabs.length}</span>
+          </div>
+          <div className="stat-item">
+            <span>Total:</span>
+            <span className="stat-number">{tabs.length + archivedTabs.length}</span>
+          </div>
+        </div>
 
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search archived tabs..."
-      />
-      <ArchivedTabs tabs={filteredArchivedTabs} onRestore={handleRestoreTab} />
+        {/* Open Tabs Section */}
+        <div className="section">
+          <h3 className="section-title">Open Tabs</h3>
+          {tabs.length > 0 ? (
+            <TabGroup tabs={tabs} onArchive={handleArchiveTab} />
+          ) : (
+            <div className="empty-state">
+              <div className="empty-state-icon">📭</div>
+              <div className="empty-state-text">No open tabs found</div>
+            </div>
+          )}
+        </div>
+
+        <hr className="divider" />
+
+        {/* Search Section */}
+        <div className="section">
+          <h3 className="section-title">Archived Tabs</h3>
+          <div className="search-container">
+            <div className="search-icon">🔍</div>
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search archived tabs..."
+              className="search-input"
+            />
+          </div>
+          
+          {archivedTabs.length > 0 ? (
+            <ArchivedTabs tabs={filteredArchivedTabs} onRestore={handleRestoreTab} />
+          ) : (
+            <div className="empty-state">
+              <div className="empty-state-icon">📚</div>
+              <div className="empty-state-text">
+                No archived tabs yet.<br />
+                Archive tabs to keep them organized!
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
