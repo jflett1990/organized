@@ -66,6 +66,16 @@ npm run clean
 - ✅ Timestamps and relative time display
 - ✅ Modern, responsive UI design
 
+### Premium Features (Ready for Monetization)
+- 🚀 **AI-Powered Analytics**: Productivity tracking, focus time analysis, and behavioral insights
+- 📁 **Smart Auto-Grouping**: Automatic tab categorization by domain, activity, and time
+- ⏰ **Intelligent Auto-Archive**: Idle detection with customizable timers
+- 🔍 **Advanced Search**: Full-text search with content intelligence
+- 📊 **Productivity Dashboard**: Comprehensive analytics with actionable recommendations
+- ⌨️ **Keyboard Shortcuts**: Power user efficiency (Ctrl+Shift+A to archive)
+- 🎯 **Smart Suggestions**: AI recommendations for tab management optimization
+- 📈 **Usage Analytics**: Detailed insights into browsing patterns and productivity
+
 ### Planned
 - 🔄 AI-powered tab summaries and auto-tagging
 - ☁️ Cloud sync across devices
