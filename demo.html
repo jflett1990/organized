@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TabSense Demo</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <style>
+        body {
+            background: #f1f5f9;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Inter', 'Helvetica Neue', sans-serif;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .demo-panel {
+            width: 380px;
+            height: 600px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        .demo-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        h1 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <h1>TabSense - Before & After Visual Redesign</h1>
+    
+    <div class="demo-container">
+        <!-- Light Theme -->
+        <div>
+            <div class="demo-title">Light Theme</div>
+            <div class="demo-panel">
+                <div class="app-container light">
+                    <div class="header">
+                        <h1>TabSense</h1>
+                        <button class="theme-toggle">
+                            🌙 Dark
+                        </button>
+                    </div>
+
+                    <div class="main-content">
+                        <!-- Stats Bar -->
+                        <div class="stats-bar">
+                            <div class="stat-item">
+                                <span>Open:</span>
+                                <span class="stat-number">5</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Archived:</span>
+                                <span class="stat-number">12</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Total:</span>
+                                <span class="stat-number">17</span>
+                            </div>
+                        </div>
+
+                        <!-- Open Tabs Section -->
+                        <div class="section">
+                            <h3 class="section-title">Open Tabs</h3>
+                            <div class="tab-group">
+                                <div class="tab-card">
+                                    <div class="tab-details">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSIjMzk4MWY2Ii8+Cjwvc3ZnPgo=" alt="favicon" class="favicon">
+                                        <div class="tab-info">
+                                            <div class="tab-title">GitHub - TabSense Development</div>
+                                            <div class="tab-url">github.com</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-actions">
+                                        <button class="archive-button">📁 Archive</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-card">
+                                    <div class="tab-details">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSIjMTA5OTgxIi8+Cjwvc3ZnPgo=" alt="favicon" class="favicon">
+                                        <div class="tab-info">
+                                            <div class="tab-title">React Documentation - Hooks</div>
+                                            <div class="tab-url">react.dev</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-actions">
+                                        <button class="archive-button">📁 Archive</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider" />
+
+                        <!-- Search Section -->
+                        <div class="section">
+                            <h3 class="section-title">Archived Tabs</h3>
+                            <div class="search-container">
+                                <div class="search-icon">🔍</div>
+                                <input type="text" placeholder="Search archived tabs..." class="search-input">
+                            </div>
+                            
+                            <div class="archived-tabs">
+                                <div class="archived-tab-card">
+                                    <div class="archived-tab-content">
+                                        <div class="archived-tab-info">
+                                            <div class="tab-info">
+                                                <div class="tab-title">CSS Grid Layout Guide</div>
+                                                <div class="tab-url">developer.mozilla.org • 2h ago</div>
+                                            </div>
+                                            <div class="tab-notes">
+                                                📄 Complete guide to CSS Grid Layout with examples...
+                                            </div>
+                                        </div>
+                                        <div class="tab-actions">
+                                            <button class="restore-button">↩️ Restore</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dark Theme -->
+        <div>
+            <div class="demo-title">Dark Theme</div>
+            <div class="demo-panel">
+                <div class="app-container dark">
+                    <div class="header">
+                        <h1>TabSense</h1>
+                        <button class="theme-toggle">
+                            ☀️ Light
+                        </button>
+                    </div>
+
+                    <div class="main-content">
+                        <!-- Stats Bar -->
+                        <div class="stats-bar">
+                            <div class="stat-item">
+                                <span>Open:</span>
+                                <span class="stat-number">5</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Archived:</span>
+                                <span class="stat-number">12</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Total:</span>
+                                <span class="stat-number">17</span>
+                            </div>
+                        </div>
+
+                        <!-- Open Tabs Section -->
+                        <div class="section">
+                            <h3 class="section-title">Open Tabs</h3>
+                            <div class="tab-group">
+                                <div class="tab-card">
+                                    <div class="tab-details">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSIjNjBhNWZhIi8+Cjwvc3ZnPgo=" alt="favicon" class="favicon">
+                                        <div class="tab-info">
+                                            <div class="tab-title">Webpack Configuration Guide</div>
+                                            <div class="tab-url">webpack.js.org</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-actions">
+                                        <button class="archive-button">📁 Archive</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-card">
+                                    <div class="tab-details">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSIjMzRkMzk5Ii8+Cjwvc3ZnPgo=" alt="favicon" class="favicon">
+                                        <div class="tab-info">
+                                            <div class="tab-title">Browser Extension APIs</div>
+                                            <div class="tab-url">developer.chrome.com</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-actions">
+                                        <button class="archive-button">📁 Archive</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider" />
+
+                        <!-- Search Section -->
+                        <div class="section">
+                            <h3 class="section-title">Archived Tabs</h3>
+                            <div class="search-container">
+                                <div class="search-icon">🔍</div>
+                                <input type="text" placeholder="Search archived tabs..." class="search-input">
+                            </div>
+                            
+                            <div class="archived-tabs">
+                                <div class="archived-tab-card">
+                                    <div class="archived-tab-content">
+                                        <div class="archived-tab-info">
+                                            <div class="tab-info">
+                                                <div class="tab-title">IndexedDB Tutorial</div>
+                                                <div class="tab-url">javascript.info • 1d ago</div>
+                                            </div>
+                                            <div class="tab-notes">
+                                                💭 Need to implement better storage structure
+                                            </div>
+                                        </div>
+                                        <div class="tab-actions">
+                                            <button class="restore-button">↩️ Restore</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

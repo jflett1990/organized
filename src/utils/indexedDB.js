@@ -30,7 +30,16 @@ export const addArchivedTab = (tab, notes) => {
   return new Promise((resolve, reject) => {
     const transaction = db.transaction([STORE_NAME], 'readwrite');
     const store = transaction.objectStore(STORE_NAME);
-    const request = store.add({ ...tab, notes });
+    
+    // Add timestamp and enhance the tab data
+    const archivedTab = {
+      ...tab,
+      notes,
+      archivedAt: new Date().toISOString(),
+      archivedTimestamp: Date.now()
+    };
+    
+    const request = store.add(archivedTab);
 
     request.onsuccess = () => {
       resolve();
@@ -49,7 +58,13 @@ export const getArchivedTabs = () => {
     const request = store.getAll();
 
     request.onsuccess = () => {
-      resolve(request.result);
+      // Sort by archived timestamp, newest first
+      const tabs = request.result.sort((a, b) => {
+        const timeA = a.archivedTimestamp || 0;
+        const timeB = b.archivedTimestamp || 0;
+        return timeB - timeA;
+      });
+      resolve(tabs);
     };
 
     request.onerror = (event) => {

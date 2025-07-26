@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "TabSense",
   "version": "1.0",
-  "description": "Smart tab and window management for modern browsers.",
-  "permissions": ["tabs", "storage", "scripting", "activeTab"],
+  "description": "Smart tab and window management for modern browsers with AI-powered insights.",
+  "permissions": ["tabs", "storage", "scripting", "activeTab", "tabGroups", "idle", "windows"],
   "background": {
     "service_worker": "background.js"
   },
@@ -20,5 +20,19 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "host_permissions": ["<all_urls>"]
+  "host_permissions": ["<all_urls>"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+T"
+      },
+      "description": "Open TabSense"
+    },
+    "archive_current_tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A"
+      },
+      "description": "Archive current tab"
+    }
+  }
 }
